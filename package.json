@@ -1,0 +1,28 @@
+{
+  "name": "@mybricks/cloud-com",
+  "displayName": "@MyBricks/Cloud Com",
+  "displayName.zh-CN": "@MyBricks/云组件",
+  "description": "Provides interfaces related to cloud coms, such as cloud com management.",
+  "description.zh-CN": "增强区块自定义能力。基于「MyBricks 云组件」可视化搭建区块，不限于自定义样式，交互，接口请求等，并且一键导入即可运行。",
+  "version": "1.0.5",
+  "main": "dist/server/index.js",
+  "homepage": "https://docs.mybricks.world/docs/cloud-component/use-as-nocobase-block",
+  "homepage.zh-CN": "https://docs.mybricks.world/docs/cloud-component/use-as-nocobase-block",
+  "license": "AGPL-3.0",
+  "peerDependencies": {
+    "@nocobase/client": "1.x",
+    "@nocobase/server": "^1.2",
+    "@nocobase/test": "1.x"
+  },
+  "keywords": [
+    "Blocks"
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^5.4.0",
+    "@ant-design/icons-svg": "^4.4.2",
+    "@mybricks/renderer-pc-cloud-without-com-defs": "0.0.7-beta.1",
+    "nocobasemyantd": "^4.24.16",
+    "@ant-design/charts": "^2.1.2",
+    "moment": "^2.30.1"
+  }
+}
