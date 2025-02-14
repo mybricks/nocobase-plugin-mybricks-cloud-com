@@ -10,9 +10,9 @@
 module.exports = {
   "react": "18.2.0",
   "@formily/react": "2.3.0",
-  "@ant-design/icons": "5.4.0",
-  "@nocobase/client": "1.2.33-alpha",
+  "@ant-design/icons": "5.2.6",
+  "@nocobase/client": "1.5.6",
   "@formily/antd-v5": "1.1.9",
-  "@formily/shared": "2.3.0",
-  "@nocobase/server": "1.2.33-alpha"
+  "@formily/shared": "2.3.2",
+  "@nocobase/server": "1.5.6"
 };
