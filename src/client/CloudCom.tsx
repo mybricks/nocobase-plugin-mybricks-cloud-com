@@ -3,7 +3,7 @@ import { ConfigProvider } from 'nocobasemyantd';
 import { observer, useField } from '@formily/react';
 import { BlockName } from '../constants';
 // @ts-ignore
-import { render } from '@mybricks/renderer-pc-cloud-without-com-defs';
+import RendererCloud from '@mybricks/renderer-pc-cloud-without-com-defs';
 
 import './modified.css';
 
@@ -52,11 +52,11 @@ export const CloudCom = observer(
       );
     }
 
-    return <ConfigProvider prefixCls="mybricks">{<Render key={key} toJSON={jsonObject} />}</ConfigProvider>;
+    return <ConfigProvider prefixCls="mybricks">{key && <Render key={key} toJSON={jsonObject} />}</ConfigProvider>;
   },
   { displayName: BlockName },
 );
 
 function Render({ toJSON }) {
-  return render({ toJSON });
+  return <RendererCloud toJSON={toJSON} />
 }

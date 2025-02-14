@@ -20,7 +20,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.4.0",
     "@ant-design/icons-svg": "^4.4.2",
-    "@mybricks/renderer-pc-cloud-without-com-defs": "0.0.7-beta.1",
+    "@mybricks/renderer-pc-cloud-without-com-defs": "0.0.9",
     "nocobasemyantd": "^4.24.16",
     "@ant-design/charts": "^2.1.2",
     "moment": "^2.30.1"
