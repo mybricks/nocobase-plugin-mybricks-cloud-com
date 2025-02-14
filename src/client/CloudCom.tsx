@@ -1,15 +1,8 @@
 import React, { useMemo, useEffect, useState } from 'react';
-import { ConfigProvider } from 'nocobasemyantd';
 import { observer, useField } from '@formily/react';
 import { BlockName } from '../constants';
 // @ts-ignore
 import RendererCloud from '@mybricks/renderer-pc-cloud-without-com-defs';
-
-import './modified.css';
-
-ConfigProvider.config({
-  prefixCls: 'mybricks',
-});
 
 export const CloudCom = observer(
   () => {
@@ -52,7 +45,7 @@ export const CloudCom = observer(
       );
     }
 
-    return <ConfigProvider prefixCls="mybricks">{key && <Render key={key} toJSON={jsonObject} />}</ConfigProvider>;
+    return key && <Render key={key} toJSON={jsonObject} />;
   },
   { displayName: BlockName },
 );
