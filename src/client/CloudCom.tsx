@@ -51,5 +51,5 @@ export const CloudCom = observer(
 );
 
 function Render({ toJSON }) {
-  return <RendererCloud toJSON={toJSON} />
+  return <RendererCloud toJSON={toJSON} />;
 }
