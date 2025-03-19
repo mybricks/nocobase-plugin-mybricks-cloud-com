@@ -18,6 +18,6 @@
     "Blocks"
   ],
   "dependencies": {
-    "@mybricks/renderer-pc-cloud-without-com-defs": "0.0.10-next.9"
+    "@mybricks/renderer-pc-cloud-without-com-defs": "0.0.10-next.10"
   }
 }
