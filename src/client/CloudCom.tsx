@@ -1,13 +1,25 @@
 import React, { useMemo, useEffect, useState } from 'react';
 import { observer, useField } from '@formily/react';
+import { useBlockHeight, useBlockHeightProps } from '@nocobase/client';
+import { theme } from 'antd';
 import { BlockName } from '../constants';
 // @ts-ignore
 import RendererCloud from '@mybricks/renderer-pc-cloud-without-com-defs';
+import 'dayjs/locale/zh-cn';
+
+const useMyBricksCloudComHeight = () => {
+  const { token } = theme.useToken();
+  const height = useBlockHeight();
+  if (!height) {
+    return;
+  }
+  return height - 2 * token.paddingLG;
+};
 
 export const CloudCom = observer(
   () => {
+    const height = useMyBricksCloudComHeight();
     const [key, setKey] = useState(null);
-
     const field = useField();
     const jsonString = field.componentProps?.['data-json'];
 
@@ -29,23 +41,25 @@ export const CloudCom = observer(
       }
     }, [jsonString, key]);
 
-    if (!jsonString || !jsonObject?.scenes?.length) {
-      return (
-        <div>
-          未{jsonString ? '正确' : ''}配置 MyBricks 云组件
-          <a
-            href="https://my.mybricks.world"
-            target="_blank"
-            rel="noreferrer"
-            style={{ fontWeight: 500, marginLeft: 6, marginRight: 6 }}
-          >
-            点击搭建
-          </a>
-        </div>
-      );
-    }
-
-    return key && <Render key={key} toJSON={jsonObject} />;
+    return (
+      <div style={{ height: height || '100%', overflowY: height ? 'auto' : undefined }}>
+        {!jsonString || !jsonObject?.scenes?.length ? (
+          <div>
+            未{jsonString ? '正确' : ''}配置 MyBricks 云组件
+            <a
+              href="https://my.mybricks.world"
+              target="_blank"
+              rel="noreferrer"
+              style={{ fontWeight: 500, marginLeft: 6, marginRight: 6 }}
+            >
+              点击搭建
+            </a>
+          </div>
+        ) : (
+          key && <Render key={key} toJSON={jsonObject} />
+        )}
+      </div>
+    );
   },
   { displayName: BlockName },
 );

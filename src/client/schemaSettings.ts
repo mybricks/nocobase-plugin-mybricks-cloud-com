@@ -1,7 +1,6 @@
-import { ISchema, useField, useFieldSchema } from '@formily/react';
+import { useField, useFieldSchema } from '@formily/react';
 import { uid } from '@formily/shared';
-import { SchemaSettings, useAPIClient, useDesignable } from '@nocobase/client';
-import { BlockName } from '../constants';
+import { SchemaSettings, useDesignable, SchemaSettingsBlockHeightItem } from '@nocobase/client';
 
 export const cloudComSchemaSettings = new SchemaSettings({
   name: `blockSettings:cloudcom`,
@@ -63,6 +62,10 @@ export const cloudComSchemaSettings = new SchemaSettings({
           noRecord: true,
         };
       },
+    },
+    {
+      name: 'setTheBlockHeight',
+      Component: SchemaSettingsBlockHeightItem,
     },
     {
       name: 'divider',
